@@ -1,21 +1,22 @@
-// ESP32 + 1.44" ST7735 (128x128) frame player
-// Library: "Adafruit ST7735 and ST7789 Library" (also installs Adafruit GFX)
+//Necessary libraries and a frames.h file(that is in the same folder as the sketch)
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7735.h>
 #include <SPI.h>
 #include "frames.h"
 
-// Wiring (ESP32 default VSPI): SCK=18, MOSI(SDA)=23, plus these three
+//Make the connections as follows:
 #define TFT_CS   5
-#define TFT_DC   2
+#define TFT_DC   2 //Sometimes also labelled A0
 #define TFT_RST  4
-// VCC -> 3V3, GND -> GND, LED/BL -> 3V3
+// VCC -> 3V3
+// GND -> GND
+// LED/BL -> 3V3
 
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 void setup() {
-  tft.initR(INITR_144GREENTAB);   // 128x128. If colours look wrong try INITR_BLACKTAB
-  tft.setRotation(0);
+  tft.initR(INITR_BLACKTAB);   // Can also be INITR_144GREENTAB if colors don't match your og video
+  tft.setRotation(1);
   tft.fillScreen(ST77XX_BLACK);
 }
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Convert an mp4 into a C header of RGB565 frames for an ESP32 + TFT.
-
-Usage:  python video2frames.py input.mp4 [width] [height] [fps]
+"""
+This Python script will convert a .MP4 file into a C Header file of RGB565 frames to use with a TFT Display
+How to use:Open terminal->Type ->python video2frames.py input.mp4 [width] [height] [fps]
 Example: python video2frames.py clip.mp4 128 128 10
-Needs:  ffmpeg on PATH, and `pip install numpy`
+Prerequisite:  ffmpeg on PATH, and `pip install numpy`
 Output: frames.h  (drop it next to the .ino sketch)
 """
 import subprocess
